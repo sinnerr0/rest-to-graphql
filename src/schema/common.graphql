@@ -1,0 +1,4 @@
+type Mutation {
+  "쿠키를 굽는다."
+  bakeCookie(key: NonEmptyString, value: String): Void
+}

@@ -1,0 +1,32 @@
+@@ -3929,6 +3929,7 @@
+                 type: requiredProperty
+                     ? new graphql.GraphQLNonNull(objectType)
+                     : objectType,
++                deprecationReason: fieldSchema?.deprecated ? 'No longer supported' : undefined,
+                 description: typeof fieldSchema === 'object' ? fieldSchema.description : null
+             };
+         }
+@@ -4414,6 +4415,7 @@
+         const paramRequired = parameter.required && !hasDefault;
+         args[saneName] = {
+             type: paramRequired ? new graphql.GraphQLNonNull(type) : type,
++            deprecationReason: parameter.deprecated ? 'No longer supported' : undefined,
+             description: parameter.description // Might be undefined
+         };
+     });
+@@ -5316,6 +5318,7 @@
+             resolve,
+             subscribe,
+             args,
++            deprecationReason: operation.operation.deprecated ? 'No longer supported' : undefined,
+             description: operation.description
+         };
+         // Get resolver for Query and Mutation fields
+@@ -5334,6 +5337,7 @@
+             type,
+             resolve,
+             args,
++            deprecationReason: operation.operation.deprecated ? 'No longer supported' : undefined,
+             description: operation.description
+         };
+     }

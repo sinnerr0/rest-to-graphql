@@ -1,17 +1,20 @@
 import { RESTDataSource } from '@apollo/datasource-rest';
 import { RequestOptions } from '@apollo/datasource-rest';
-import { FastifyRequest } from 'fastify';
+import { FastifyReply, FastifyRequest } from 'fastify';
+import setCookie from 'set-cookie-parser';
 import { NODE_ENV } from '../config';
 
 export class BaseDataSource extends RESTDataSource {
   private token: string;
   private cookie: string;
   private defaultTimeout = 5000;
+  private reply: FastifyReply;
 
-  constructor(req: FastifyRequest) {
+  constructor(req: FastifyRequest, reply: FastifyReply) {
     super({ logger: req.log });
     this.token = req.headers.authorization;
     this.cookie = req.headers.cookie;
+    this.reply = reply;
   }
 
   override willSendRequest(_path: string, request) {
@@ -27,6 +30,8 @@ export class BaseDataSource extends RESTDataSource {
   override async parseBody(response): Promise<object | string> {
     const contentType = response.headers.get('content-type');
     const contentLength = response.headers.get('content-length');
+    const cookies = response.headers.get('set-cookie');
+    this.setCookies(cookies);
     if (response.status !== 204 && contentLength !== '0' && contentType.includes('json')) {
       const body = await response.text();
       try {
@@ -36,6 +41,30 @@ export class BaseDataSource extends RESTDataSource {
       }
     } else {
       return await response.text();
+    }
+  }
+
+  /**
+   * 서버 쿠키 설정을 그대로 적용
+   * @param cookies 서버 응답 쿠키 값
+   */
+  setCookies(cookies: string) {
+    if (cookies && typeof cookies === 'string') {
+      setCookie
+        .splitCookiesString(cookies)
+        .map((v) => setCookie.parse(v))
+        .reduce((prev, curr) => prev.concat(curr), [])
+        .forEach((cookie) => {
+          this.reply.setCookie(cookie.name, cookie.value, {
+            domain: cookie.domain,
+            expires: cookie.expires && !isNaN(Date.parse(cookie.expires.toString())) ? new Date(cookie.expires) : undefined,
+            httpOnly: cookie.httpOnly,
+            maxAge: cookie.maxAge,
+            path: cookie.path,
+            sameSite: cookie.sameSite as 'lax' | 'none' | 'strict' | undefined,
+            secure: cookie.secure,
+          });
+        });
     }
   }
 

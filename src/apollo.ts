@@ -71,7 +71,7 @@ export const context: ApolloFastifyContextFunction<ContextValue> = async (req, r
     reply,
     api: {
       petstore: {
-        base: new PetstoreBaseDatasource(req),
+        base: new PetstoreBaseDatasource(req, reply),
       },
     },
   };

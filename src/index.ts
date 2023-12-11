@@ -33,9 +33,13 @@ export const createApolloServer = async (port: number = PORT) => {
 
   await fastify.register(fastifyCookie, { hook: 'onRequest' });
 
+  // @ts-ignore
   await fastify.register(fastifyHttpProxy, {
     upstream: new URL(UPSTREAM_URL.PETSTORE.BASE_PATH, UPSTREAM_URL.PETSTORE.URL).href,
     prefix: UPSTREAM_URL.PETSTORE.PREFIX,
+    replyOptions: {
+      retriesCount: 1,
+    },
   });
 
   fastify.route({

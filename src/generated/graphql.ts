@@ -10,81 +10,81 @@ export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' |
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string; }
-  String: { input: string; output: string; }
-  Boolean: { input: boolean; output: boolean; }
-  Int: { input: number; output: number; }
-  Float: { input: number; output: number; }
-  AccountNumber: { input: any; output: any; }
+  ID: { input: string; output: string };
+  String: { input: string; output: string };
+  Boolean: { input: boolean; output: boolean };
+  Int: { input: number; output: number };
+  Float: { input: number; output: number };
+  AccountNumber: { input: any; output: any };
   /** The `BigInt` scalar type represents non-fractional signed whole numeric values. */
-  BigInt: { input: any; output: any; }
-  Byte: { input: any; output: any; }
-  CountryCode: { input: any; output: any; }
-  Cuid: { input: any; output: any; }
-  Currency: { input: any; output: any; }
-  DID: { input: any; output: any; }
-  Date: { input: any; output: any; }
-  DateTime: { input: any; output: any; }
-  DateTimeISO: { input: any; output: any; }
-  DeweyDecimal: { input: any; output: any; }
-  Duration: { input: any; output: any; }
-  EmailAddress: { input: any; output: any; }
-  GUID: { input: any; output: any; }
-  HSL: { input: any; output: any; }
-  HSLA: { input: any; output: any; }
-  HexColorCode: { input: any; output: any; }
-  Hexadecimal: { input: any; output: any; }
-  IBAN: { input: any; output: any; }
-  IP: { input: any; output: any; }
-  IPCPatent: { input: any; output: any; }
-  IPv4: { input: any; output: any; }
-  IPv6: { input: any; output: any; }
-  ISBN: { input: any; output: any; }
-  ISO8601Duration: { input: any; output: any; }
+  BigInt: { input: any; output: any };
+  Byte: { input: any; output: any };
+  CountryCode: { input: any; output: any };
+  Cuid: { input: any; output: any };
+  Currency: { input: any; output: any };
+  DID: { input: any; output: any };
+  Date: { input: any; output: any };
+  DateTime: { input: any; output: any };
+  DateTimeISO: { input: any; output: any };
+  DeweyDecimal: { input: any; output: any };
+  Duration: { input: any; output: any };
+  EmailAddress: { input: any; output: any };
+  GUID: { input: any; output: any };
+  HSL: { input: any; output: any };
+  HSLA: { input: any; output: any };
+  HexColorCode: { input: any; output: any };
+  Hexadecimal: { input: any; output: any };
+  IBAN: { input: any; output: any };
+  IP: { input: any; output: any };
+  IPCPatent: { input: any; output: any };
+  IPv4: { input: any; output: any };
+  IPv6: { input: any; output: any };
+  ISBN: { input: any; output: any };
+  ISO8601Duration: { input: any; output: any };
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
-  JSON: { input: any; output: any; }
-  JSONObject: { input: any; output: any; }
-  JWT: { input: any; output: any; }
-  LCCSubclass: { input: any; output: any; }
-  Latitude: { input: any; output: any; }
-  LocalDate: { input: any; output: any; }
-  LocalDateTime: { input: any; output: any; }
-  LocalEndTime: { input: any; output: any; }
-  LocalTime: { input: any; output: any; }
-  Locale: { input: any; output: any; }
-  Long: { input: any; output: any; }
-  Longitude: { input: any; output: any; }
-  MAC: { input: any; output: any; }
-  NegativeFloat: { input: any; output: any; }
-  NegativeInt: { input: any; output: any; }
-  NonEmptyString: { input: any; output: any; }
-  NonNegativeFloat: { input: any; output: any; }
-  NonNegativeInt: { input: any; output: any; }
-  NonPositiveFloat: { input: any; output: any; }
-  NonPositiveInt: { input: any; output: any; }
-  ObjectID: { input: any; output: any; }
-  PhoneNumber: { input: any; output: any; }
-  Port: { input: any; output: any; }
-  PositiveFloat: { input: any; output: any; }
-  PositiveInt: { input: any; output: any; }
-  PostalCode: { input: any; output: any; }
-  RGB: { input: any; output: any; }
-  RGBA: { input: any; output: any; }
-  RoutingNumber: { input: any; output: any; }
-  SafeInt: { input: any; output: any; }
-  SemVer: { input: any; output: any; }
-  Time: { input: any; output: any; }
-  TimeZone: { input: any; output: any; }
-  Timestamp: { input: any; output: any; }
-  URL: { input: any; output: any; }
-  USCurrency: { input: any; output: any; }
-  UUID: { input: any; output: any; }
-  UnsignedFloat: { input: any; output: any; }
-  UnsignedInt: { input: any; output: any; }
+  JSON: { input: any; output: any };
+  JSONObject: { input: any; output: any };
+  JWT: { input: any; output: any };
+  LCCSubclass: { input: any; output: any };
+  Latitude: { input: any; output: any };
+  LocalDate: { input: any; output: any };
+  LocalDateTime: { input: any; output: any };
+  LocalEndTime: { input: any; output: any };
+  LocalTime: { input: any; output: any };
+  Locale: { input: any; output: any };
+  Long: { input: any; output: any };
+  Longitude: { input: any; output: any };
+  MAC: { input: any; output: any };
+  NegativeFloat: { input: any; output: any };
+  NegativeInt: { input: any; output: any };
+  NonEmptyString: { input: any; output: any };
+  NonNegativeFloat: { input: any; output: any };
+  NonNegativeInt: { input: any; output: any };
+  NonPositiveFloat: { input: any; output: any };
+  NonPositiveInt: { input: any; output: any };
+  ObjectID: { input: any; output: any };
+  PhoneNumber: { input: any; output: any };
+  Port: { input: any; output: any };
+  PositiveFloat: { input: any; output: any };
+  PositiveInt: { input: any; output: any };
+  PostalCode: { input: any; output: any };
+  RGB: { input: any; output: any };
+  RGBA: { input: any; output: any };
+  RoutingNumber: { input: any; output: any };
+  SafeInt: { input: any; output: any };
+  SemVer: { input: any; output: any };
+  Time: { input: any; output: any };
+  TimeZone: { input: any; output: any };
+  Timestamp: { input: any; output: any };
+  URL: { input: any; output: any };
+  USCurrency: { input: any; output: any };
+  UUID: { input: any; output: any };
+  UnsignedFloat: { input: any; output: any };
+  UnsignedInt: { input: any; output: any };
   /** The `Upload` scalar type represents a file upload. */
-  Upload: { input: any; output: any; }
-  UtcOffset: { input: any; output: any; }
-  Void: { input: any; output: any; }
+  Upload: { input: any; output: any };
+  UtcOffset: { input: any; output: any };
+  Void: { input: any; output: any };
 };
 
 export type ApiResponse = {
@@ -177,64 +177,52 @@ export type Mutation = {
   putUser?: Maybe<Scalars['String']['output']>;
 };
 
-
 export type MutationBakeCookieArgs = {
   key?: InputMaybe<Scalars['NonEmptyString']['input']>;
   value?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type MutationDeletePetArgs = {
   apiKey?: InputMaybe<Scalars['String']['input']>;
   petId: Scalars['BigInt']['input'];
 };
 
-
 export type MutationDeleteStoreOrderArgs = {
   orderId: Scalars['BigInt']['input'];
 };
-
 
 export type MutationDeleteUserArgs = {
   username: Scalars['String']['input'];
 };
 
-
 export type MutationPostPetArgs = {
   requestBody: PetInput;
 };
-
 
 export type MutationPostPetUploadImageArgs = {
   petId: Scalars['BigInt']['input'];
   requestBody?: InputMaybe<PetUploadImageInput>;
 };
 
-
 export type MutationPostStoreOrderArgs = {
   requestBody: OrderInput;
 };
-
 
 export type MutationPostUserArgs = {
   requestBody: UserInput;
 };
 
-
 export type MutationPostUserCreateWithArrayArgs = {
   requestBody: Array<InputMaybe<UserInput>>;
 };
-
 
 export type MutationPostUserCreateWithListArgs = {
   requestBody: Array<InputMaybe<UserInput>>;
 };
 
-
 export type MutationPutPetArgs = {
   requestBody: PetInput;
 };
-
 
 export type MutationPutUserArgs = {
   requestBody: UserInput;
@@ -341,31 +329,25 @@ export type Query = {
   userLogout?: Maybe<Scalars['String']['output']>;
 };
 
-
 export type QueryPetArgs = {
   petId: Scalars['BigInt']['input'];
 };
-
 
 export type QueryPetFindByStatusArgs = {
   status: Array<InputMaybe<Status3ListItem>>;
 };
 
-
 export type QueryPetFindByTagsArgs = {
   tags: Array<InputMaybe<Scalars['String']['input']>>;
 };
-
 
 export type QueryStoreOrderArgs = {
   orderId: Scalars['BigInt']['input'];
 };
 
-
 export type QueryUserArgs = {
   username: Scalars['String']['input'];
 };
-
 
 export type QueryUserLoginArgs = {
   password: Scalars['String']['input'];
@@ -375,19 +357,19 @@ export type QueryUserLoginArgs = {
 export enum Status {
   Available = 'available',
   Pending = 'pending',
-  Sold = 'sold'
+  Sold = 'sold',
 }
 
 export enum Status2 {
   Approved = 'approved',
   Delivered = 'delivered',
-  Placed = 'placed'
+  Placed = 'placed',
 }
 
 export enum Status3ListItem {
   Available = 'available',
   Pending = 'pending',
-  Sold = 'sold'
+  Sold = 'sold',
 }
 
 export type User = {
@@ -415,35 +397,34 @@ export type UserInput = {
   username?: InputMaybe<Scalars['String']['input']>;
 };
 
-
-
 export type ResolverTypeWrapper<T> = Promise<T> | T;
-
 
 export type ResolverWithResolve<TResult, TParent, TContext, TArgs> = {
   resolve: ResolverFn<TResult, TParent, TContext, TArgs>;
 };
-export type Resolver<TResult, TParent = {}, TContext = {}, TArgs = {}> = ResolverFn<TResult, TParent, TContext, TArgs> | ResolverWithResolve<TResult, TParent, TContext, TArgs>;
+export type Resolver<TResult, TParent = {}, TContext = {}, TArgs = {}> =
+  | ResolverFn<TResult, TParent, TContext, TArgs>
+  | ResolverWithResolve<TResult, TParent, TContext, TArgs>;
 
 export type ResolverFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
   args: TArgs,
   context: TContext,
-  info: GraphQLResolveInfo
+  info: GraphQLResolveInfo,
 ) => Promise<TResult> | TResult;
 
 export type SubscriptionSubscribeFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
   args: TArgs,
   context: TContext,
-  info: GraphQLResolveInfo
+  info: GraphQLResolveInfo,
 ) => AsyncIterable<TResult> | Promise<AsyncIterable<TResult>>;
 
 export type SubscriptionResolveFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
   args: TArgs,
   context: TContext,
-  info: GraphQLResolveInfo
+  info: GraphQLResolveInfo,
 ) => TResult | Promise<TResult>;
 
 export interface SubscriptionSubscriberObject<TResult, TKey extends string, TParent, TContext, TArgs> {
@@ -467,7 +448,7 @@ export type SubscriptionResolver<TResult, TKey extends string, TParent = {}, TCo
 export type TypeResolveFn<TTypes, TParent = {}, TContext = {}> = (
   parent: TParent,
   context: TContext,
-  info: GraphQLResolveInfo
+  info: GraphQLResolveInfo,
 ) => Maybe<TTypes> | Promise<Maybe<TTypes>>;
 
 export type IsTypeOfResolverFn<T = {}, TContext = {}> = (obj: T, context: TContext, info: GraphQLResolveInfo) => boolean | Promise<boolean>;
@@ -479,10 +460,8 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
   parent: TParent,
   args: TArgs,
   context: TContext,
-  info: GraphQLResolveInfo
+  info: GraphQLResolveInfo,
 ) => TResult | Promise<TResult>;
-
-
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
@@ -663,7 +642,10 @@ export interface AccountNumberScalarConfig extends GraphQLScalarTypeConfig<Resol
   name: 'AccountNumber';
 }
 
-export type ApiResponseResolvers<ContextType = ContextValue, ParentType extends ResolversParentTypes['ApiResponse'] = ResolversParentTypes['ApiResponse']> = {
+export type ApiResponseResolvers<
+  ContextType = ContextValue,
+  ParentType extends ResolversParentTypes['ApiResponse'] = ResolversParentTypes['ApiResponse'],
+> = {
   code?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   message?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -830,11 +812,26 @@ export type MutationResolvers<ContextType = ContextValue, ParentType extends Res
   deleteStoreOrder?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationDeleteStoreOrderArgs, 'orderId'>>;
   deleteUser?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationDeleteUserArgs, 'username'>>;
   postPet?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationPostPetArgs, 'requestBody'>>;
-  postPetUploadImage?: Resolver<Maybe<ResolversTypes['ApiResponse']>, ParentType, ContextType, RequireFields<MutationPostPetUploadImageArgs, 'petId'>>;
+  postPetUploadImage?: Resolver<
+    Maybe<ResolversTypes['ApiResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationPostPetUploadImageArgs, 'petId'>
+  >;
   postStoreOrder?: Resolver<Maybe<ResolversTypes['Order']>, ParentType, ContextType, RequireFields<MutationPostStoreOrderArgs, 'requestBody'>>;
   postUser?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationPostUserArgs, 'requestBody'>>;
-  postUserCreateWithArray?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationPostUserCreateWithArrayArgs, 'requestBody'>>;
-  postUserCreateWithList?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationPostUserCreateWithListArgs, 'requestBody'>>;
+  postUserCreateWithArray?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationPostUserCreateWithArrayArgs, 'requestBody'>
+  >;
+  postUserCreateWithList?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationPostUserCreateWithListArgs, 'requestBody'>
+  >;
   putPet?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationPutPetArgs, 'requestBody'>>;
   putUser?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationPutUserArgs, 'requestBody' | 'username'>>;
 };
@@ -1073,4 +1070,3 @@ export type Resolvers<ContextType = ContextValue> = {
   UtcOffset?: GraphQLScalarType;
   Void?: GraphQLScalarType;
 };
-

@@ -3,86 +3,96 @@ type Mutation {
   bakeCookie(key: NonEmptyString, value: String): Void
   """
   Deletes a pet
-  
+
   Equivalent to DELETE /pet/{petId}
   """
   deletePet(
     apiKey: String
-    """Pet id to delete"""
+    """
+    Pet id to delete
+    """
     petId: BigInt!
   ): String
   """
   For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
-  
+
   Equivalent to DELETE /store/order/{orderId}
   """
   deleteStoreOrder(
-    """ID of the order that needs to be deleted"""
+    """
+    ID of the order that needs to be deleted
+    """
     orderId: BigInt!
   ): String
   """
   This can only be done by the logged in user.
-  
+
   Equivalent to DELETE /user/{username}
   """
   deleteUser(
-    """The name that needs to be deleted"""
+    """
+    The name that needs to be deleted
+    """
     username: String!
   ): String
   """
   Add a new pet to the store
-  
+
   Equivalent to POST /pet
   """
   postPet(requestBody: PetInput!): String
   """
   uploads an image
-  
+
   Equivalent to POST /pet/{petId}/uploadImage
   """
   postPetUploadImage(
-    """ID of pet to update"""
+    """
+    ID of pet to update
+    """
     petId: BigInt!
     requestBody: PetUploadImageInput
   ): ApiResponse
   """
   Place an order for a pet
-  
+
   Equivalent to POST /store/order
   """
   postStoreOrder(requestBody: OrderInput!): Order
   """
   This can only be done by the logged in user.
-  
+
   Equivalent to POST /user
   """
   postUser(requestBody: UserInput!): String
   """
   Creates list of users with given input array
-  
+
   Equivalent to POST /user/createWithArray
   """
   postUserCreateWithArray(requestBody: [UserInput]!): String
   """
   Creates list of users with given input array
-  
+
   Equivalent to POST /user/createWithList
   """
   postUserCreateWithList(requestBody: [UserInput]!): String
   """
   Update an existing pet
-  
+
   Equivalent to PUT /pet
   """
   putPet(requestBody: PetInput!): String
   """
   This can only be done by the logged in user.
-  
+
   Equivalent to PUT /user/{username}
   """
   putUser(
     requestBody: UserInput!
-    """name that need to be updated"""
+    """
+    name that need to be updated
+    """
     username: String!
   ): String
 }
@@ -90,69 +100,83 @@ type Mutation {
 type Query {
   """
   Returns a single pet
-  
+
   Equivalent to GET /pet/{petId}
   """
   pet(
-    """ID of pet to return"""
+    """
+    ID of pet to return
+    """
     petId: BigInt!
   ): Pet
   """
   Multiple status values can be provided with comma separated strings
-  
+
   Equivalent to GET /pet/findByStatus
   """
   petFindByStatus(
-    """Status values that need to be considered for filter"""
+    """
+    Status values that need to be considered for filter
+    """
     status: [Status3ListItem]!
   ): [Pet]
   """
   Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
-  
+
   Equivalent to GET /pet/findByTags
   """
   petFindByTags(
-    """Tags to filter by"""
+    """
+    Tags to filter by
+    """
     tags: [String]!
   ): [Pet] @deprecated
   """
   Returns a map of status codes to quantities
-  
+
   Equivalent to GET /store/inventory
   """
   storeInventory: JSON
   """
   For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
-  
+
   Equivalent to GET /store/order/{orderId}
   """
   storeOrder(
-    """ID of pet that needs to be fetched"""
+    """
+    ID of pet that needs to be fetched
+    """
     orderId: BigInt!
   ): Order
   """
   Get user by user name
-  
+
   Equivalent to GET /user/{username}
   """
   user(
-    """The name that needs to be fetched. Use user1 for testing."""
+    """
+    The name that needs to be fetched. Use user1 for testing.
+    """
     username: String!
   ): User
   """
   Logs user into the system
-  
+
   Equivalent to GET /user/login
   """
   userLogin(
-    """The password for login in clear text"""
+    """
+    The password for login in clear text
+    """
     password: String!
-    """The user name for login"""
+    """
+    The user name for login
+    """
     username: String!
   ): String
   """
   Logs out current logged in user session
-  
+
   Equivalent to GET /user/logout
   """
   userLogout: String
@@ -163,7 +187,9 @@ type Pet {
   id: BigInt
   name: String!
   photoUrls: [String]!
-  """pet status in the store"""
+  """
+  pet status in the store
+  """
   status: Status
 }
 
@@ -200,7 +226,9 @@ type Order {
   petId: BigInt
   quantity: Int
   shipDate: String
-  """Order Status"""
+  """
+  Order Status
+  """
   status: Status2
 }
 
@@ -217,7 +245,9 @@ type User {
   lastName: String
   password: String
   phone: String
-  """User Status"""
+  """
+  User Status
+  """
   userStatus: Int
   username: String
 }
@@ -227,7 +257,9 @@ input PetInput {
   id: BigInt
   name: String!
   photoUrls: [String]!
-  """pet status in the store"""
+  """
+  pet status in the store
+  """
   status: Status
 }
 
@@ -243,13 +275,19 @@ type ApiResponse {
 }
 
 input PetUploadImageInput {
-  """Additional data to pass to server"""
+  """
+  Additional data to pass to server
+  """
   additionalMetadata: String
-  """file to upload"""
+  """
+  file to upload
+  """
   file: Upload
 }
 
-"""The `Upload` scalar type represents a file upload."""
+"""
+The `Upload` scalar type represents a file upload.
+"""
 scalar Upload
 
 input OrderInput {
@@ -258,7 +296,9 @@ input OrderInput {
   petId: BigInt
   quantity: Int
   shipDate: String
-  """Order Status"""
+  """
+  Order Status
+  """
   status: Status2
 }
 
@@ -269,7 +309,9 @@ input UserInput {
   lastName: String
   password: String
   phone: String
-  """User Status"""
+  """
+  User Status
+  """
   userStatus: Int
   username: String
 }

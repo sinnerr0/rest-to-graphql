@@ -8,9 +8,10 @@
     "dev": "NODE_ENV=development tsx watch src/index.ts",
     "start": "tsx src/index.ts",
     "codegen:watch": "npm-watch codegen:schema",
-    "codegen:schema": "tsx merge-schema.ts && graphql-codegen --config codegen.ts",
+    "codegen:schema": "tsx merge-schema.ts && graphql-codegen --config codegen.ts && npm run prettier:schema",
     "codegen:oas": "tsx resources/codegen.oas.ts",
     "codegen:code": "tsx resources/codegen.code.ts",
+    "prettier:schema": "prettier -w **/*.graphql src/generated",
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "watch": {
